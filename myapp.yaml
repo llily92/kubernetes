@@ -13,3 +13,8 @@ spec:
     name: memcached
   - image: consul  
     name: consul
+    
+    
+COmmands: vim myapp.yaml
+kubectl apply -f myapp.yaml
+kubectl get pods
