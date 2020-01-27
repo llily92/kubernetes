@@ -17,3 +17,9 @@ spec:
   restartPolicy: Always
 status: {}
 contexts:      
+
+
+commands:
+kubectl run --generator=run-pod/v1 redispod --image=redis --port=9090 --namespace=web  --dry-run -o yaml > redisPOD.yaml
+added namespace: web in vim
+kubectl apply -f redisPOD.yaml
