@@ -1,1 +1,0 @@
-kube-system   calico-node-n572z                                      22m          45Mi            
