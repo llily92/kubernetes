@@ -1,0 +1,27 @@
+TASK.A.
+vim cronjob.yaml
+Version: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: 10
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox
+            command: ["uname"]
+          restartPolicy: OnFailure
+kubectl apply -f cronjob.yaml
+kubectl get pods 
+kubectls logs NAMEOFTHEPOD
+
+
+TASK.B.
+TASK.C.
+
+

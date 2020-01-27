@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: 17
+      template:
+        spec:
+          containers:
+          - name: hellov
+            image: busybox
+            command: ["uname"]
+          restartPolicy: OnFailure
